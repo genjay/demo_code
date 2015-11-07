@@ -1,0 +1,21 @@
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Released on</th>
+      <th>Price</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.released_on %></td>
+        <td><%= product.price %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ 
