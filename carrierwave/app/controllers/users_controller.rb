@@ -40,8 +40,13 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+<<<<<<< HEAD
     # render :text => params #user_params
     # return
+=======
+    render :text => params #user_params
+    return
+>>>>>>> f6bde1590b7cfc4def2a21f308b840169fa8a4b6
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
