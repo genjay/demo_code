@@ -1,0 +1,319 @@
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddPhotoPathToUsers (20151030092926)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" ADD "photo" text
+SQLite3::SQLException: no such table: users: ALTER TABLE "users" ADD "photo" text
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPhotoPathToUsers (20151030092926)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "photo" text[0m
+SQLite3::SQLException: no such table: users: ALTER TABLE "users" ADD "photo" text
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151030091003)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030091003"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddPhotoPathToUsers (20151030092926)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "photo" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151030092926"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2015-10-30 17:32:25 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (1.3ms)
+Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2015-10-30 17:32:29 +0800
+Processing by UsersController#index as HTML
+DEPRECATION WARNING: `#column_for_attribute` will return a null object for non-existent columns in Rails 5. Use `#has_attribute?` if you need to check for an attribute's existence. (called from <class:User> at /Users/apple/tmp/demo_code/attache_rails/app/models/user.rb:3)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1567ms (Views: 1564.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-10-30 17:32:30 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 72ms (Views: 71.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-5340d15fdc486713518705ccec8e8ab707408babe02f3a53bbe92811a57d8f9f.css?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/assets/attache/bootstrap3.self-86d62d1143a8aa3ed556fed89ccd47b2149adc45ce6b648cca3785ffdc8a7873.js?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/assets/attache/file_input.self-d0ac55f5453cec17fe52eb1df5bfadde31b5d6e00686400622e19a103be55edf.js?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/assets/attache/cors_upload.self-7783e2c2784962bffa0aaf18844c6e0d91f349bc64fcc8292157295870571d33.js?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/assets/attache/ujs.self-0815b6f3576979a6e8f9c5bc2b46a5636e9df108ec2e29acf760d6579dbc8e03.js?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/assets/attache.self-545c38b0922de19734fbffde62792c37c2aef6a3216cfa472449173165220f7d.js?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-10-30 17:32:30 +0800
+
+
+Started GET "/users/new" for ::1 at 2015-10-30 17:32:32 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (26.5ms)
+  Rendered users/new.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `avatar_options' for #<User:0x007fbd77648980>):
+    20:     <%= f.text_field :email %>
+    21:   </div>
+    22: 
+    23:  <%= f.file_field :photos, f.object.avatar_options("64x64#") %>
+    24:   <div class="actions">
+    25:     <%= f.submit %>
+    26:   </div>
+  app/views/users/_form.html.erb:23:in `block in _app_views_users__form_html_erb__2917606763429514036_70225875508200'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__2917606763429514036_70225875508200'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___4543046853172347243_70225864542400'
+
+
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.9ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.8ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (93.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-10-30 17:32:32 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `avatar_options' for #<User:0x007fbd732d8560>):
+    20:     <%= f.text_field :email %>
+    21:   </div>
+    22: 
+    23:  <%= f.file_field :photos, f.object.avatar_options("64x64#") %>
+    24:   <div class="actions">
+    25:     <%= f.submit %>
+    26:   </div>
+  app/views/users/_form.html.erb:23:in `block in _app_views_users__form_html_erb__2917606763429514036_70225828744820'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__2917606763429514036_70225828744820'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___4543046853172347243_70225828873140'
+
+
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.7ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.8ms)
+DEPRECATION WARNING: `#column_for_attribute` will return a null object for non-existent columns in Rails 5. Use `#has_attribute?` if you need to check for an attribute's existence. (called from <class:User> at /Users/apple/tmp/demo_code/attache_rails/app/models/user.rb:3)
+DEPRECATION WARNING: `#column_for_attribute` will return a null object for non-existent columns in Rails 5. Use `#has_attribute?` if you need to check for an attribute's existence. (called from <class:User> at /Users/apple/tmp/demo_code/attache_rails/app/models/user.rb:3)
+
+
+Started GET "/users/new" for ::1 at 2015-10-30 20:48:33 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (13.7ms)
+  Rendered users/new.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `photos' for #<ActionView::Helpers::FormBuilder:0x007fbd75880e48>):
+    20:     <%= f.text_field :email %>
+    21:   </div>
+    22: 
+    23:  <%= f.file_field :photos, f.photos.avatar_options("64x64#") %>
+    24:   <div class="actions">
+    25:     <%= f.submit %>
+    26:   </div>
+  app/views/users/_form.html.erb:23:in `block in _app_views_users__form_html_erb__2917606763429514036_70225848850900'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__2917606763429514036_70225848850900'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___4543046853172347243_70225828873140'
+
+
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.6ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (93.9ms)
+
+
+Started GET "/users/new" for ::1 at 2015-10-30 20:49:31 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (12.5ms)
+  Rendered users/new.html.erb within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `photo' for #<ActionView::Helpers::FormBuilder:0x007fbd75a69ea8>):
+    20:     <%= f.text_field :email %>
+    21:   </div>
+    22: 
+    23:  <%= f.file_field :photo, f.photo.avatar_options("64x64#") %>
+    24:   <div class="actions">
+    25:     <%= f.submit %>
+    26:   </div>
+  app/views/users/_form.html.erb:23:in `block in _app_views_users__form_html_erb__2917606763429514036_70225849769620'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__2917606763429514036_70225849769620'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___4543046853172347243_70225828873140'
+
+
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.0ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (82.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-10 11:59:23 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 19ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2015-11-10 11:59:42 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+DEPRECATION WARNING: `#column_for_attribute` will return a null object for non-existent columns in Rails 5. Use `#has_attribute?` if you need to check for an attribute's existence. (called from <class:User> at /Users/apple/tmp/demo_code/attache_rails/app/models/user.rb:3)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 257ms (Views: 244.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/scaffolds.self-5340d15fdc486713518705ccec8e8ab707408babe02f3a53bbe92811a57d8f9f.css?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/assets/attache/file_input.self-d0ac55f5453cec17fe52eb1df5bfadde31b5d6e00686400622e19a103be55edf.js?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/assets/attache/bootstrap3.self-86d62d1143a8aa3ed556fed89ccd47b2149adc45ce6b648cca3785ffdc8a7873.js?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/assets/attache/cors_upload.self-7783e2c2784962bffa0aaf18844c6e0d91f349bc64fcc8292157295870571d33.js?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/assets/attache/ujs.self-0815b6f3576979a6e8f9c5bc2b46a5636e9df108ec2e29acf760d6579dbc8e03.js?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/assets/attache.self-545c38b0922de19734fbffde62792c37c2aef6a3216cfa472449173165220f7d.js?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-10 11:59:42 +0800
+
+
+Started GET "/users/new" for ::1 at 2015-11-10 11:59:45 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (40.3ms)
+  Rendered users/new.html.erb within layouts/application (46.8ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `photo' for #<ActionView::Helpers::FormBuilder:0x007f86c584a8e8>):
+    20:     <%= f.text_field :email %>
+    21:   </div>
+    22: 
+    23:  <%= f.file_field :photo, f.photo.avatar_options("64x64#") %>
+    24:   <div class="actions">
+    25:     <%= f.submit %>
+    26:   </div>
+  app/views/users/_form.html.erb:23:in `block in _app_views_users__form_html_erb__2775437249589043694_70108379761520'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__2775437249589043694_70108379761520'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__235572242235434561_70108374174580'
+
+
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.1ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.1ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.3ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-10 11:59:45 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (11.2ms)
+  Rendered users/new.html.erb within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `photo' for #<ActionView::Helpers::FormBuilder:0x007f86c5f0c398>):
+    20:     <%= f.text_field :email %>
+    21:   </div>
+    22: 
+    23:  <%= f.file_field :photo, f.photo.avatar_options("64x64#") %>
+    24:   <div class="actions">
+    25:     <%= f.submit %>
+    26:   </div>
+  app/views/users/_form.html.erb:23:in `block in _app_views_users__form_html_erb__2775437249589043694_70108411607040'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__2775437249589043694_70108411607040'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__235572242235434561_70108380626400'
+
+
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.1ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (36.1ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apple/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (80.5ms)
